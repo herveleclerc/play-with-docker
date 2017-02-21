@@ -20,8 +20,8 @@
         $scope.ttl = '--:--:--';
         $scope.connected = true;
         $scope.isInstanceBeingCreated = false;
-        $scope.newInstanceBtnText = '+ Add new instance';
-        $scope.deleteInstanceBtnText = 'Delete';
+        $scope.newInstanceBtnText = '+ Ajouter nouvelle instance';
+        $scope.deleteInstanceBtnText = 'Supprimer';
         $scope.isInstanceBeingDeleted = false;
 
         angular.element($window).bind('resize', function() {
@@ -74,7 +74,7 @@
                 $scope.showInstance(i);
             }, function(response) {
                 if (response.status == 409) {
-                    $scope.showAlert('Max instances reached', 'Maximum number of instances reached')
+                    $scope.showAlert('Nombre max instance atteint', 'Le nombre maximum des instances a été atteint')
                 }
             }).finally(function() {
                 updateNewInstanceBtnState(false);
@@ -111,7 +111,7 @@
                 });
 
                 socket.on('session end', function() {
-                    $scope.showAlert('Session timed out!', 'Your session has expired and all of your instances have been deleted.', '#sessionEnd')
+                    $scope.showAlert('Session timed out!', 'Votre session a expiré toutes vos instances on été supprimées.', '#sessionEnd')
                     $scope.isAlive = false;
                 });
 
@@ -169,7 +169,7 @@
                 if (inst) $scope.showInstance(inst);
             }, function(response) {
                 if (response.status == 404) {
-                    document.write('session not found');
+                    document.write('session non trouvée');
                     return
                 }
             });
@@ -270,20 +270,20 @@
 
         function updateNewInstanceBtnState(isInstanceBeingCreated) {
             if (isInstanceBeingCreated === true) {
-                $scope.newInstanceBtnText = '+ Creating...';
+                $scope.newInstanceBtnText = '+ Création...';
                 $scope.isInstanceBeingCreated = true;
             } else {
-                $scope.newInstanceBtnText = '+ Add new instance';
+                $scope.newInstanceBtnText = '+ Ajouter une instance';
                 $scope.isInstanceBeingCreated = false;
             }
         }
 
         function updateDeleteInstanceBtnState(isInstanceBeingDeleted) {
             if (isInstanceBeingDeleted === true) {
-                $scope.deleteInstanceBtnText = 'Deleting...';
+                $scope.deleteInstanceBtnText = 'Suppression...';
                 $scope.isInstanceBeingDeleted = true;
             } else {
-                $scope.deleteInstanceBtnText = 'Delete';
+                $scope.deleteInstanceBtnText = 'Supprimer';
                 $scope.isInstanceBeingDeleted = false;
             }
         }

@@ -103,7 +103,7 @@ func (s *Session) SchedulePeriodicTasks() {
 					cli := &http.Client{
 						Transport: transport,
 					}
-					c, err := client.NewClient(fmt.Sprintf("http://%s:2375", i.IP), client.DefaultVersion, cli, nil)
+					c, err := client.NewClient(fmt.Sprintf("http://%s:2375", i.IP), "1.13", cli, nil)
 					if err != nil {
 						log.Println("Could not connect to DinD docker daemon", err)
 					} else {

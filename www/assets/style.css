@@ -9,6 +9,14 @@ md-card-content.terminal-container {
     padding: 0;
 }
 
+.md-sidenav-left .md-theme-indigo, .md-sidenav-left .nav-theme {
+    background-color: #240058;
+}
+
+.md-button.md-default-theme.md-warn.md-raised, .md-button.md-warn.md-raised, .md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-fab {
+    background-color: #a70447;
+}
+
 .clock {
     font-family: 'Rationale', sans-serif;
     font-size: 3.0em;
