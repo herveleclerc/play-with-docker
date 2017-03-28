@@ -1,3 +1,4 @@
+# French translation
 FROM golang:1.7
 
 # Copy the runtime dockerfile into the context as Dockerfile
